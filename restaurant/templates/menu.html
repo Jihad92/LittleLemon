@@ -1,19 +1,22 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-<h1>Menu</h1>
-<!--Begin col-->
-<div class="column">
-    {% for item in menu %}
-    <p>
-        <a href="{% url 'menu-detail' pk=item.pk %}">
-            {{ item.name }}
-            </a>
-        <span class="menu-price">
-            ${{ item.price }}.00
-        </span>
-    </p>
-    {% endfor %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="container px-4 py-5" id="featured-3">
+	<h1 class="pb-2 border-bottom">Menu</h2>
+	<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+		{% for item in menu %}
+		<div class="feature col">
+			<div
+				class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
+                <img class="rounded-3 img-fluid w-100 h-100" src="{% static 'restaurant/img/' %}{{item.name}}.jpg" alt="{{ item.name }}" style="object-fit: cover;" />
+            </div>
+			<h3 class="fs-2">{{ item.name }}</h3>
+			<p>${{ item.price }}.00</p>
+			<a
+				href="{% url 'menu-detail' pk=item.pk %}"
+				class="icon-link d-inline-flex align-items-center">
+				Detail
+			</a>
+		</div>
+		{% endfor %}
+	</div>
 </div>
-<!--End col-->
 {% endblock %}

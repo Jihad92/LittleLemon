@@ -1,13 +1,16 @@
 {% load static %}
-<header>
-  <img src="{% static 'restaurant/img/logo.png' %}" />
+<header class="py-3 mb-4">
+  <div class="container d-flex flex-wrap justify-content-center">
+    <img src="{% static 'restaurant/img/logo.png' %}" />
+  </div>
 </header>
-<nav>
-  <ul>
-    <li><a href="{% url 'home' %}">Home</a></li>
-    <li><a href="{% url 'about' %}">About</a></li>
-    <li><a href="{% url 'menu-list' %}">Menu</a></li>
-    <li><a href="{% url 'book' %}">Book</a></li>
-    <li><a href="{% url 'reservations' %}">Reservations</a></li>
-  </ul>
+
+<nav class="bg-success">
+    <ul class="nav justify-content-center fs-4">
+      <li class="nav-item"><a href="{% url 'home' %}" class="nav-link link-dark active text-light" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="{% url 'about' %}" class="nav-link link-dark text-light">About</a></li>
+      <li class="nav-item"><a href="{% url 'menu-list' %}" class="nav-link link-dark text-light">Menu</a></li>
+      <li class="nav-item"><a href="{% url 'book' %}" class="nav-link link-dark text-light">Book</a></li>
+      <li class="nav-item"><a href="{% url 'reservations' %}" class="nav-link link-dark text-light">Reservations</a></li>
+    </ul>
 </nav>
